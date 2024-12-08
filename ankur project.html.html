@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        button{
+            margin: 5px;
+            margin-top: 12px;
+            width: 42px;
+            height: 50px;
+            font-size: 20px;
+            border: solid black 2px;
+            border-radius: 10px;
+             background-color: rgb(14, 14, 17);
+            color: antiquewhite;
+        }
+       
+        .cl{
+            margin-left: 5px;
+           
+        }
+        .cp{
+            display: block;
+            margin: auto;
+             
+            border: solid rgb(12, 12, 12) 2px;
+            width: 230px;
+            height: 390px;
+            margin-top: 200px;
+            
+            background-color: rgb(110, 242, 242);
+            border-radius: 46px;
+        }
+        #go{
+            margin: 8px;
+            width: 200px;
+            height: 30px;
+            margin-right: 9px;
+            border: solid black 1px;
+         border-radius: 10px;
+         font-size: 20px;
+         background-color: rgb(3, 2, 2);
+         color: antiquewhite;
+        }
+        body{
+            background-color: rgb(81, 32, 32);
+        }
+        h1{
+            
+            background-color: rgb(233, 198, 198);
+            color: azure;
+            height: 100px; 
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0px;
+        }
+        #pk{
+            background-color: rgb(249, 4, 65);
+        }
+    </style>
+</head>
+<body>
+    <h1> welcome my calculator  </h1>
+
+<div class="cp"> 
+    <input type="text" id="go">
+    <div class="cl"> 
+        <button id="pk">c</button>
+        <button id="pk">x</button>
+        <button id="pk">%</button>
+        <button id="pk">m+</button>
+    </div>
+    <div class="cl"> 
+        <button>7</button>
+        <button>8</button>
+        <button>9</button>
+        <button  id="pk">*</button>
+    </div>
+    <div class="cl"> 
+        <button>4</button>
+        <button>5</button>
+        <button>6</button>
+        <button  id="pk">-</button>
+    </div>
+    <div class="cl"> 
+        <button>1</button>
+        <button>2</button>
+        <button>3</button>
+        <button  id="pk">+</button>
+    </div>
+    <div class="cl"> 
+        <button>/</button>
+        <button>0</button>
+        <button>.</button>
+        <button  id="pk">=</button>
+    </div>
+</div>
+<script>
+   let string ="";
+    let buttons = document. querySelectorAll('button');
+    console.log(buttons);
+    
+    buttons.forEach((button)=>{
+button.addEventListener('click',(e)=>{
+    if(e.target.innerHTML == '='){ 
+        string = eval(string);
+        document.querySelector('input').value = string;
+    }
+   else if(e.target.innerHTML=='c'){ 
+        string= " " ;
+        document.querySelector('input').value = string;
+    }
+    else{
+    string =  string +  e.target.innerHTML ;
+    console.log(string);
+    document.querySelector('input').value = string;
+}
+// document.querySelector('input').value = string;
+});
+   });
+</script>
+</body>
+</html>
